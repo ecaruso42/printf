@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils_hex.c                                 :+:      :+:    :+:   */
+/*   ft_printf_utils_hex.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:47:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/06 18:42:12 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/07 17:26:08 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putptr(unsigned long long ptr)
 {
@@ -73,11 +73,4 @@ int	ft_count16(unsigned long long ptr)
 		count++;
 	}
 	return (count);
-}
-
-int main(void)
-{
-	unsigned long long	*ptr = NULL;
-
-	ft_putptr(*ptr);
 }

@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_utils.c                                     :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:28:31 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/06 18:37:03 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/07 17:26:02 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putchar(char a)
+int	ft_putchar(int a)
 {
-	return (write(1, &a, 1));
+	write (1, &a, 1);
+	return (1);
 }
 
 int	ft_putstr(char	*str)

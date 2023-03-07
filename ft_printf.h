@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:21:50 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/06 18:33:13 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/07 17:19:16 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <unistd.h>
 
-int	ft_putchar(char a);
+int	ft_putchar(int a);
 int	ft_putstr(char	*str);
 int	ft_putptr(unsigned long long ptr);
 int	ft_print_hex(unsigned long long n);
