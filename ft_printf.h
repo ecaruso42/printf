@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:21:50 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/07 17:19:16 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/07 19:22:59 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include <unistd.h>
+# include <unistd.h>
+# include <stdarg.h>
 
 int	ft_putchar(int a);
 int	ft_putstr(char	*str);

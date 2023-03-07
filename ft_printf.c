@@ -6,7 +6,48 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:38:22 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/06 18:02:15 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/07 19:27:41 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int	ft_check_type(va_list arg, char type)
+{
+	int	len;
+
+	len = 0;
+	if (type == 'c')
+		len += ft_putchar(va_arg(arg, int));
+	if (type == 's')
+		len += ft_putstr(va_arg(arg, char *));
+	if (type == 'p')
+		len += ft_putptr(va_arg(arg, unsigned long long));
+	return (len);
+}
+
+int	ft_printf(char *str, ...)
+{
+	va_list	args;
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	va_start(args, str);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '%')
+		{
+			len += ft_check_type(args, str[i + 1]);
+			i++;
+		}
+		else
+		{
+			len += ft_putchar(str[i]);
+		}
+		i++;
+	}
+	va_end(args);
+	return (len);
+}
