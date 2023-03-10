@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:28:31 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/09 17:14:54 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/10 16:03:36 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,29 @@ int	ft_putnbr(int nb)
 	{
 		nbr *= -1;
 		i += ft_putchar('-');
+	}
+	if (nbr > 9)
+	{
+		i += ft_putnbr(nbr / 10);
+	}
+	i += ft_putchar((nbr % 10) + 48);
+	return (i);
+}
+
+int ft_put_unsigned_nbr(unsigned int nbr)
+{
+	int	i;
+
+	i = 0;
+	if (nbr < 0)
+	{
+		ft_putstr("null");
+		return (4);
+	}
+	if (nbr == 0)
+	{
+		ft_putchar('0');
+		return (1);
 	}
 	if (nbr > 9)
 	{

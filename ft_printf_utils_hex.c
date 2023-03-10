@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 15:47:11 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/07 17:26:08 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:18:39 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_print_hex(unsigned long long n)
 		ft_print_hex(n / 16);
 		ft_print_hex(n % 16);
 	}
-	if (n > 9)
+	else if (n > 9)
 	{
 		ft_putchar(n - 10 + 'a');
 	}
@@ -59,6 +59,60 @@ int	ft_print_hex(unsigned long long n)
 		ft_putchar(n + 48);
 	}
 	count = ft_count16(n);
+	return (count);
+}
+
+int	ft_print_lowc_nbr_hex(unsigned int nbr)
+{
+	int	count;
+
+	count = 0;
+	if (nbr == 0)
+	{
+		write (1, "0", 1);
+		return (1);
+	}
+	if (nbr > 15)
+	{
+		ft_print_lowc_nbr_hex(nbr / 16);
+		ft_print_lowc_nbr_hex(nbr % 16);
+	}
+	else if (nbr > 9)
+	{
+		ft_putchar (nbr - 10 + 'a');
+	}
+	if (nbr <= 9)
+	{
+		ft_putchar (nbr + 48);
+	}
+	count += ft_count16(nbr);
+	return (count);
+}
+
+int	ft_print_uppc_nbr_hex(unsigned int nbr)
+{
+	int	count;
+
+	count = 0;
+	if (nbr == 0)
+	{
+		write (1, "0", 1);
+		return (1);
+	}
+	if (nbr > 15)
+	{
+		ft_print_uppc_nbr_hex(nbr / 16);
+		ft_print_uppc_nbr_hex(nbr % 16);
+	}
+	else if (nbr > 9)
+	{
+		ft_putchar (nbr - 10 + 'A');
+	}
+	if (nbr <= 9)
+	{
+		ft_putchar (nbr + 48);
+	}
+	count += ft_count16(nbr);
 	return (count);
 }
 
