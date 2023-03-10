@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:38:22 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/10 17:17:11 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/10 17:45:04 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	ft_check_type(va_list arg, char type)
 		len += ft_print_lowc_nbr_hex(va_arg(arg, unsigned int));
 	if (type == 'X')
 		len += ft_print_uppc_nbr_hex(va_arg(arg, unsigned int));
+	if (type == '%')
+		len += ft_putchar('%');
 	return (len);
 }
 
