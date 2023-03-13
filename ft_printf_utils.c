@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:28:31 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/10 17:43:52 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/13 19:55:09 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putchar(int a)
 	return (1);
 }
 
-int	ft_putstr(char	*str)
+int	ft_putstr(const char *str)
 {
 	int	i;
 
