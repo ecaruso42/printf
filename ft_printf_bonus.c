@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:24:15 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/20 22:35:07 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/21 20:24:29 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ int	ft_sort_space(va_list arg2, const char *s1)
 		len += ft_put_space_uint(va_arg(arg2,unsigned int), &s1[0]);
 	if (s1[i] == 's')
 		len += ft_put_space_str(va_arg(arg2, char *), &s1[0]);
-	if (s1[i] == 'p'|| s1[i] == 'x')
-		len += ft_put_space_hex(va_arg(arg2, unsigned long long), &s1[0]);
+	if (s1[i] == 'p')
+		len += ft_put_space_ptr(va_arg(arg2, long long), &s1[0]);
+	if (s1[i] == 'x' || s1[i] == 'X')
+		len += ft_put_space_hex(va_arg(arg2, long long), &s1[0]);
 	return (len);
 }
 
@@ -114,6 +116,33 @@ int	ft_put_space_int(int nbr, const char *s1)
 	return (i);
 }
 
+int	ft_put_space_ptr(long long ptr, const char *s1)
+{
+	int		i;
+	int		len;
+	int		l;
+	char	buffer[20];
+
+	i = 0;
+	l = 0;
+	len = 0;
+	len -= ft_hex_nbrcount(ptr);
+	if (s1[i] == '-')
+			i++;
+	while (s1[i] >= '0' && s1[i] <= '9')
+		buffer[l++] = s1[i++];
+	len += ft_atoi(buffer);
+	i = len;
+	if (i < 0)
+		return (0);
+	while (len > 0)
+	{
+		ft_putchar(' ');
+		len--;
+	}
+	return (i);
+}
+
 int	ft_put_space_uint(unsigned int nbr, const char *s1)
 {
 	int		i;
@@ -141,7 +170,7 @@ int	ft_put_space_uint(unsigned int nbr, const char *s1)
 	return (i);
 }
 
-int	ft_put_space_hex(unsigned long long nbr, const char *s1)
+int	ft_put_space_hex(long long nbr, const char *s1)
 {
 	int		i;
 	int		len;
@@ -190,28 +219,25 @@ int	ft_nbrcount(int nbr)
 	return (count);
 }
 
-int	ft_hex_nbrcount(unsigned long nbr)
+int	ft_hex_nbrcount(unsigned long long nbr)
 {
-		int	count;
+	int	count;
 
 	count = 0;
 	if (nbr < 0)
 	{
-		nbr *= -1;
+		nbr = -nbr;
 		count++;
 	}
 	if (nbr == 0)
 	{
 		return (1);
 	}
-	if (nbr >= 16)
-		while (nbr > 0)
-		{
-			nbr = nbr / 16;
-			count++;
-		}
-	else
-		return (1);
+	while (nbr > 0)
+	{
+		nbr /= 16;
+		count++;
+	}
 	return (count);
 }
 

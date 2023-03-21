@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 18:21:50 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/20 22:34:26 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/21 20:20:53 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ int	ft_put_space_char(const char *s1);
 int	ft_put_space_int(int nbr, const char *s1);
 int	ft_nbrcount(int nbr);
 int	ft_unbrcount(unsigned int nbr);
-int	ft_hex_nbrcount(unsigned long nbr);
+int	ft_hex_nbrcount(unsigned long long nbr);
 int	ft_put_space_uint(unsigned int nbr, const char *s1);
-int	ft_put_space_hex(unsigned long long nbr, const char *s1);
-//int	main(void);
+int	ft_put_space_hex(long long nbr, const char *s1);
+int	ft_put_space_ptr(long long ptr, const char *s1);
+int	main(void);
 
 #endif

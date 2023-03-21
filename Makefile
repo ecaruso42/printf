@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 18:47:24 by ecaruso           #+#    #+#              #
-#    Updated: 2023/03/20 22:31:24 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/03/21 20:14:41 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRC = ft_printf.c \
 ft_printf_utils.c \
 ft_printf_utils_hex.c \
 ft_printf_bonus.c \
-#main.c \
+main.c \
 
 
 OBJ = ${SRC:.c=.o}
