@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:38:22 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/20 16:06:48 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/22 17:01:41 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_check_type(va_list arg, char type)
 	return (len);
 }
 
-int	ft_check_flags(va_list arg,va_list arg2, const char *s1)
+int	ft_check_flags(va_list arg, va_list arg2, const char *s1)
 {
 	int		len;
 	int		i;

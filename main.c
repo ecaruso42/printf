@@ -6,7 +6,7 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:29:12 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/21 19:25:56 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/22 16:01:55 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 
 int	main(void)
 {
-	//printf("|%-3x|\n", 15);
-	//ft_printf("|%-3x|\n", 15);
-	// ft_printf("|%-2p|\n", 1);
-	printf("|%-13p| |%-14p|\n", (void*)ULONG_MAX, (void*)-ULONG_MAX);
-	ft_printf("|%-13p| |%-14p|\n", ULONG_MAX, -ULONG_MAX);
+	printf("|%-12x|\n", (unsigned int)LONG_MIN);
+	ft_printf("|%-12x|\n", LONG_MIN);
+	printf("|%-15x|\n", (unsigned int)9223372036854775807LL);
+	ft_printf("|%-15x|\n", 9223372036854775807LL);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 18:47:24 by ecaruso           #+#    #+#              #
-#    Updated: 2023/03/21 20:14:41 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/03/22 17:12:18 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,10 @@ NAME = libftprintf.a
 SRC = ft_printf.c \
 ft_printf_utils.c \
 ft_printf_utils_hex.c \
-ft_printf_bonus.c \
-main.c \
+ft_putspace_bonus.c \
+ft_putspacehex_bonus.c \
+ft_utils_bonus.c \
+#main.c \
 
 
 OBJ = ${SRC:.c=.o}
