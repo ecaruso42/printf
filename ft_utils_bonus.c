@@ -6,13 +6,13 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 17:03:55 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/22 17:13:14 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/24 17:33:51 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_nbrcount(int nbr)
+int	ft_nbrcount(long int nbr)
 {
 	int	count;
 

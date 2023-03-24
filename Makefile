@@ -6,7 +6,7 @@
 #    By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 18:47:24 by ecaruso           #+#    #+#              #
-#    Updated: 2023/03/22 17:12:18 by ecaruso          ###   ########.fr        #
+#    Updated: 2023/03/24 20:08:44 by ecaruso          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ ft_printf_utils_hex.c \
 ft_putspace_bonus.c \
 ft_putspacehex_bonus.c \
 ft_utils_bonus.c \
-#main.c \
+ft_putzero_bonus.c \
+main.c \
 
 
 OBJ = ${SRC:.c=.o}

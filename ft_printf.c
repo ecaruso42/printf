@@ -6,13 +6,13 @@
 /*   By: ecaruso <ecaruso@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:38:22 by ecaruso           #+#    #+#             */
-/*   Updated: 2023/03/22 17:01:41 by ecaruso          ###   ########.fr       */
+/*   Updated: 2023/03/24 16:09:05 by ecaruso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_check_type(va_list arg, char type)
+int	ft_check_type(va_list arg, char type , const char *s1)
 {
 	int	len;
 
@@ -24,9 +24,9 @@ int	ft_check_type(va_list arg, char type)
 	if (type == 'p')
 		len += ft_putptr(va_arg(arg, unsigned long long));
 	if (type == 'd' || type == 'i')
-		len += ft_putnbr(va_arg(arg, int));
+		len += ft_putnbr(va_arg(arg, int), &s1[0]);
 	if (type == 'u')
-		len += ft_put_unsigned_nbr(va_arg(arg, unsigned int));
+		len += ft_put_unsigned_nbr(va_arg(arg, unsigned int), &s1[0]);
 	if (type == 'x')
 		len += ft_print_lowc_nbr_hex(va_arg(arg, unsigned int));
 	if (type == 'X')
@@ -44,7 +44,7 @@ int	ft_check_flags(va_list arg, va_list arg2, const char *s1)
 	int		swap;
 	char	*flags;
 
-	flags = "0-.# +123456789";
+	flags = "-.# +123456789";
 	len = 0;
 	i = 0;
 	j = 0;
@@ -56,7 +56,7 @@ int	ft_check_flags(va_list arg, va_list arg2, const char *s1)
 		j++;
 	}
 	i += iterate_until_type(&s1[i]);
-	len += ft_check_type(arg, s1[i]);
+	len += ft_check_type(arg, s1[i], &s1[0]);
 	if (s1[swap] == '-')
 		len += ft_sort_flags(arg2, &s1[swap]);
 	return (len);
@@ -71,7 +71,7 @@ int	ft_sort_flags(va_list arg2, const char *s1)
 	i = 0;
 	if (s1[i] == '-' || (s1[i] >= '1' && s1[i] <= '9'))
 		len += ft_sort_space(arg2, &s1[i]);
-	return (len);
+	return(len);
 }
 
 int	iterate_until_type(const char *s1)
